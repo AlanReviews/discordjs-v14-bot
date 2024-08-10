@@ -21,8 +21,9 @@ module.exports = {
 		.addFields(
 			{name: "Username", value: `${user.displayName}`},
 			{name: "User ID", value: `${user.id}`},
-			{name: "Joined At", value: `${user.joinedAt}`})
-		.setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
+			{name: "Joined At", value: `${user.joinedAt}`},
+		)
+		.setImage(user.displayAvatarURL({ dynamic: true}))
 		interaction.reply({ embeds: [userInfo] })
 	},
 };

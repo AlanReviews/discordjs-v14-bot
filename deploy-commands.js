@@ -1,7 +1,10 @@
-const { REST, Routes } = require('discord.js');
+require('dotenv').config()
+const { Client, GatewayIntentBits, REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
 
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const guild = client.guilds.cache.get(guildId);
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
