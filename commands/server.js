@@ -10,10 +10,12 @@ module.exports = {
 		.setColor(0x0099FF)
 		.setTitle("Server Info")
 		.addFields(
+			{name: "Name", value: `${interaction.guild.name}`},
 			{name: "Member Count", value: `${interaction.guild.memberCount}`},
 			{name: "NSFW Level", value: `${interaction.guild.nsfwLevel}`},
 			{name: "MFA Level", value: `${interaction.guild.mfaLevel}`},
-			{name: "Creation Date", value: `${interaction.guild.createdAt}`},)
+			{name: "Creation Date", value: `${interaction.guild.createdAt}`},
+			{name: "Content filter", value: `${interaction.guild.explicitContentFilter}`},)
 		interaction.reply({ embeds: [serverInfo] });
 	},
 };

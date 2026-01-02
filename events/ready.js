@@ -7,7 +7,7 @@ module.exports = {
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
 		client.user.setPresence({
-			activities: [{ name: `Created in discord.js v14`, type: ActivityType.Playing }],
+			activities: [{ name: `I have slash commands`, type: ActivityType.Playing }],
 			status: 'online',
 		  });
 	},
